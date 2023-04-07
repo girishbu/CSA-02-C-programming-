@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int sum = 0, i;
+    
+    printf("Enter the string : ");
+    gets(str); // Read input string from user
+    
+    for(i = 0; str[i] != '\0'; i++) {
+        sum += (int) str[i]; // Add ASCII value of each character to sum
+    }
+    
+    printf("Sum of all characters : %d", sum);
+    
+    return 0;
+}
