@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int main() {
+    int x, n, choice;
+    printf("Enter the value of X: ");
+    scanf("%d", &x);
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    printf("Choose the operation to perform:\n");
+    printf("1. Pow(x,n)\n");
+    printf("2. Add(x,n)\n");
+    printf("3. Sub(x,n)\n");
+    printf("4. Mul(x,n)\n");
+    printf("5. Div(x,n)\n");
+    printf("Enter your choice (1-5): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1: // Pow(x,n)
+            {
+                int result = 1;
+                for(int i=1; i<=n; i++) {
+                    result *= x;
+                }
+                printf("Pow(%d,%d) = %d\n", x, n, result);
+            }
+            break;
+
+        case 2: // Add(x,n)
+            {
+                int result = x + n;
+                printf("Add(%d,%d) = %d\n", x, n, result);
+            }
+            break;
+
+        case 3: // Sub(x,n)
+            {
+                int result = x - n;
+                printf("Sub(%d,%d) = %d\n", x, n, result);
+            }
+            break;
+
+        case 4: // Mul(x,n)
+            {
+                int result = x * n;
+                printf("Mul(%d,%d) = %d\n", x, n, result);
+            }
+            break;
+
+        case 5: // Div(x,n)
+            {
+                if(n == 0) {
+                    printf("Error: Division by zero.\n");
+                } else {
+                    float result = (float)x / n;
+                    printf("Div(%d,%d) = %.2f\n", x, n, result);
+                }
+            }
+            break;
+
+        default:
+            printf("Invalid choice. Please enter a number between 1 and 5.\n");
+            break;
+    }
+
+    return 0;
+}
